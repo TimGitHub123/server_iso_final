@@ -95,27 +95,20 @@ SHOW CLUSTERS;
 ```
 
 IP для инструментов:
-|====|==============================================|============|============|=================|
-|  № |		Название 	|			Адрес			|    login	 |     pass   |       База      |
-|====|==============================================|============|============|=================|
-|  1 |	Airflow			|	http://11.11.1.22:8081/	|   airflow  |  airflow   |                 |
-|  2 |	S3 MiniO		|   http://11.11.1.22:9001/	| minioadmin | minioadmin |                 |
-|  3 |	Spark UI		|	http://11.11.1.22:8089/	|    		 |   		  |                 |
-|  4 |	superset		|	http://11.11.1.22:8088/	|    admin	 | 	admin     |                 |
-|  5 |	trino   		|	http://11.11.1.22:8080/ |    admin   |   	      |                 |
-|  6 |	spark-iceberg	|	http://11.11.1.22:8888/ |    		 |  	 	  |                 |
-|  7 |	rest			|	http://11.11.1.22:8181/	|    		 |   	 	  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 |					|							|    		 |   		  |                 |
-|	 | postgres airflow	|	  11.11.1.22 port 5433  |  airflow   |  airflow   | airflow         |
-|	 | postgres_superset|	  11.11.1.22 port 5434  |  superset  |  superset  | superset        |
-|	 | postgres-iceberg	|	  11.11.1.22 port 5435	|  iceberg   |  iceberg   | iceberg_catalog |
-|	 | bi_postgres  	|	  11.11.1.22 port 5436  |  postgres  |  postgres  | postgres        |
-|====|==================|===========================|============|============|=================|
+
+| № |		  Название 	    |		      	Адрес		    	|     login	    |      pass     |       База      |
+|:---:|:-------------------|:-------------------------|:---------------|:---------------|:-----------------|
+| 1 |	Airflow			      |	http://11.11.1.22:8081/ | airflow       | airflow       |                 |
+| 2 |	S3 MiniO		      | http://11.11.1.22:9001/	| minioadmin    | minioadmin    |                 |
+| 3 |	Spark UI		      |	http://11.11.1.22:8089/	|        		    |   		        |                 |
+| 4 |	superset		      |	http://11.11.1.22:8088/	| superset      | superset         |                 |
+| 5 |	trino   		      |	http://11.11.1.22:8080/ | admin         |   	          |                 |
+| 6 |	spark-iceberg     |	http://11.11.1.22:8888/ |    		        |  	 	          |                 |
+| 7 |	rest		     	    |	http://11.11.1.22:8181/	|        		    |   	    	    |                 |
+|	  | postgres airflow	|	  11.11.1.22 port 5433  |  airflow      |  airflow      | airflow         |
+|	  | postgres_superset |	  11.11.1.22 port 5434  |  superset     |  superset     | superset        |
+|	  | postgres-iceberg	|	  11.11.1.22 port 5435	|  iceberg      |  iceberg      | iceberg_catalog |
+|	  | bi_postgres      	|	  11.11.1.22 port 5436  |  bi_postgres  |  bi_postgres  | bi_bd           |
 
 ** Для перезапуска инфраструктуры, если что-то пошло не так:**
 
@@ -168,4 +161,5 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # 3. Применить изменения группы (БЕЗ перезагрузки)
+
 newgrp docker
