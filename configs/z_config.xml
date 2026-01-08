@@ -1,0 +1,23 @@
+<clickhouse>
+    <remote_servers replace="true">
+        <!-- 2 shards 2 replicas -->
+        <c2sh2rep>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica><host>click1</host><port>9000</port><user>default</user><password>1q2w3e4r</password></replica>
+                <replica><host>click2</host><port>9000</port><user>default</user><password>1q2w3e4r</password></replica>
+            </shard>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica><host>click3</host><port>9000</port><user>default</user><password>1q2w3e4r</password></replica>
+                <replica><host>click4</host><port>9000</port><user>default</user><password>1q2w3e4r</password></replica>
+            </shard>
+        </c2sh2rep>
+    </remote_servers>
+    <zookeeper>
+    <node index="1">
+        <host>zookeeper</host>
+        <port>2181</port>
+    </node>  
+    </zookeeper>
+</clickhouse>
